@@ -91,7 +91,8 @@ def main(link='https://www.youtube.com/watch?v=zNyYDHCg06c', download_folder='./
             d[res['Category']].append(res['Text'])
         else:
             d[res['Category']]=[res['Text']]
-    
+    for key in d.keys():
+        d[key]=list(set(d[key]))
     return d
 
     
